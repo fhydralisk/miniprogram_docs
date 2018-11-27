@@ -27,4 +27,4 @@ pages:
         - 获取余额和明细: 'Reference/wallet-system/obtain.md'
 - Model:
     - 模型文档说明: 'Model/comments.md'
-    - 钱包模型: 'Model/wallet/wallet-model'
+    - 钱包模型: 'Model/wallet/wallet-model.md'
