@@ -22,3 +22,9 @@ pages:
     - API文档说明: 'Reference/comments.md'
     - 用户系统:
         - 用户注册: 'Reference/user-system/login.md'
+
+    - 钱包系统:
+        - 获取余额和明细: 'Reference/wallet-system/obtain.md'
+- Model:
+    - 模型文档说明: 'Model/comments.md'
+    - 钱包模型: 'Model/wallet/wallet-model'
