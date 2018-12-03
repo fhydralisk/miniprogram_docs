@@ -40,4 +40,4 @@ pages:
     - 钱包模型: 'Model/wallet/wallet-model.md'
     - 订单模型: 'Model/order/order-model.md'
     - 用户模型:
-        -用户收货地址模型: 'Model/user/delivery_model.md'
+        - 用户收货地址模型: 'Model/user/delivery_model.md'
