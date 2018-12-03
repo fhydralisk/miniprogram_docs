@@ -29,8 +29,15 @@ pages:
 
     - 订单系统（我的投递）:
         - 获取我的投递: 'Reference/order-system/obtain.md'
+        - 用户收货地址: 'Reference/order-system/delivery_info.md'
+        - 种类价格列表: 'Reference/order-system/category.md'
+        - 一键下单: 'Reference/order-system/one_click_order.md'
+        - 获取客户未完成订单: 'Reference/order-system/uncompleted.md'
+        - 取消订单: 'Reference/order-system/cancel-order.md'
 
 - Model:
     - 模型文档说明: 'Model/comments.md'
     - 钱包模型: 'Model/wallet/wallet-model.md'
     - 订单模型: 'Model/order/order-model.md'
+    - 用户模型:
+        -用户收货地址模型: 'Model/user/delivery_model.md'

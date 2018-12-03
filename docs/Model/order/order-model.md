@@ -10,8 +10,9 @@
 | create_time   |Long    | 产生的时间戳   |          | R      |
 | o_state       | Int   | 订单状态      |         | R         |
 | amount        | float  |  订单金额        |       | R     |
-| uid           | FK     | 对应用户         |        | R   |
-| location       | String     | 对应地址       |          | R     |
+| uid_c           | FK     | 对应客户         |        | R   |
+| uid_b           | FK     | 对应回收员         |        | R   |
+| c_delivery_info | [UserDeliveryInfo](/Model/user/delivery_model/) | 客户收货信息 | | R |
 
 *注释*
 
