@@ -23,6 +23,7 @@ pages:
     - 用户系统:
         - 用户注册: 'Reference/user-system/login.md'
         - 获取用户信息: 'Reference/user-system/obtain.md'
+        - 获取二维码信息: 'Reference/user-system/qrinfo.md'
 
     - 钱包系统:
         - 获取余额和明细: 'Reference/wallet-system/obtain.md'
@@ -34,6 +35,9 @@ pages:
         - 一键下单: 'Reference/order-system/one_click_order.md'
         - 获取客户未完成订单: 'Reference/order-system/uncompleted.md'
         - 取消订单: 'Reference/order-system/cancel-order.md'
+
+    - 商户系统:
+        - 获取附近回收站: 'Reference/business-system/recycle_bin.md'
 
 - Model:
     - 模型文档说明: 'Model/comments.md'

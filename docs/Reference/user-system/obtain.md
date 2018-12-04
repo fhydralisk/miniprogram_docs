@@ -21,6 +21,8 @@ user_sid			     		| String 	    | 16位会话ID
 user_info 			  	|  用户信息参数集 			| 用户信息参数集
 is_validate             | Int                   |  该用户是否实名认证过
 result					| Int					| 请求结果
+n_times                 | Int                   | 完成订单次数
+total_amount            | Float                 | 完成订单总金额
 
 ### API 注释
 
@@ -60,7 +62,9 @@ __响应__
             "idcard_number": "110xxxxxxxxxxxxxxx"
         },
         "is_validate": 1,
-        "result": 200
+        "n_times": 2,
+        "result": 200,
+        "total_amount": 10.1
     },
     "context": null
 }
