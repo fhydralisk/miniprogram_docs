@@ -147,7 +147,7 @@ rb_id                   | Int                   | 回收站id
 ------------------------|-----------------------|-------------------
 recycle_bin       	    | [RecycleBin](/Model/business/recycle_bin-model/) | 回收站信息详情
 distance                | Float                  | 和用户的距离，以米为单位
-
+position_desc           | dict                   | 通过经纬度解析出的地址信息
 
 result含义：
 
@@ -175,7 +175,7 @@ __响应__
             "GPS_A": 39.99606,
             "rb_name": "回收站1",
             "r_b_type": 0,
-            "loc_desc": "海淀区xxxx",
+            "loc_desc": "xxxxxxxx",
             "pn": "13145678910",
             "type_list": [
                 {
@@ -198,7 +198,14 @@ __响应__
                 }
             ]
         },
-        "result": 200
+        "result": 200,
+        "position_desc": {
+            "formatted_addresses": {
+                "rough": "海淀区中关村泰鹏大厦(海淀北二街)",
+                "recommend": "海淀区中关村泰鹏大厦(海淀北二街)"
+            },
+            "address": "北京市海淀区海淀北二街"
+        }
     },
     "context": null
 }
