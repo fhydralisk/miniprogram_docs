@@ -24,6 +24,7 @@ pages:
         - 用户注册: 'Reference/user-system/login.md'
         - 获取用户信息: 'Reference/user-system/obtain.md'
         - 获取二维码信息: 'Reference/user-system/qrinfo.md'
+        - 用户认证: 'Reference/user-system/validate.md'
 
     - 钱包系统:
         - 获取余额和明细: 'Reference/wallet-system/obtain.md'
