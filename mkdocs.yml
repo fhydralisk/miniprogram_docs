@@ -40,6 +40,14 @@ pages:
     - 商户系统:
         - 获取附近回收站: 'Reference/business-system/recycle_bin.md'
 
+    # - 品类系统:
+    # - 质检系统:
+    # - 站长系统:
+    - 配置系统:
+        - 配置系统简介: 'Reference/config-system/introduction.md'
+        - 一键下单有关配置: 'Reference/config-system/client-order.md'
+    #- 界面系统:
+    #- 后台系统:
 - Model:
     - 模型文档说明: 'Model/comments.md'
     - 钱包模型: 'Model/wallet/wallet-model.md'
