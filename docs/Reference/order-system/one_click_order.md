@@ -4,7 +4,7 @@
 
 ### URL
 
-/order/c/order/picking_time/
+/order/c/picking_time/
 
 ### HTTP请求方式
 
@@ -119,8 +119,9 @@ __请求__
 
 ```json
 {
+    "user_sid": "3fd60833-f543-11e8-9057-6c96cfdf6ce7",
 	"data":{
-		"user_sid": "3fd60833-f543-11e8-9057-6c96cfdf6ce7",
+        "order_picking_time": 0,
 		"customer_appraisal":[
 			{
                 "p_type": 1,

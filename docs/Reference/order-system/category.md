@@ -57,18 +57,24 @@ __响应__
                 "c_type": "类型1",
                 "min_price": 1,
                 "max_price": 4,
+                "min_price_defult_kg": 1,
+                "max_price_default_kg": 4,
                 "type_id": 1
             },
             {
                 "c_type": "类型2",
                 "min_price": 2,
                 "max_price": 3,
+                "min_price_defult_kg": 1,
+                "max_price_default_kg": 4,
                 "type_id": 2
             },
             {
                 "c_type": "类型3",
                 "min_price": 2,
                 "max_price": 3,
+                "min_price_defult_kg": 1,
+                "max_price_default_kg": 4,
                 "type_id": 3
             }
         ],
