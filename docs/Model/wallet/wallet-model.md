@@ -22,7 +22,9 @@
 | ------------- | ------ | -------------- | -------- | ----- |
 | id            | Int    | 数据库唯一标识符 |          | R     |
 | create_time   |Long    | 产生的时间戳   |          | R      |
-| transaction_type| Int  | 明细类型       |         | R         |
+| t_type | Int  | 明细类型       |         | R         |
+| t_state | Int | 交易状态 | | R |
+| t_source | Int | 宝宝金来源 | | R |
 | amount        | float  |  金额数目        |       | R     |
 | uid           | FK     | 对应用户         |        | R   |
 | oid           | FK      | 对应订单       |          | R     |
