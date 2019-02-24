@@ -50,6 +50,8 @@ pages:
         - 一键下单有关配置: 'Reference/config-system/client-order.md'
     #- 界面系统:
     #- 后台系统:
+    - 活动:
+        - 一对多分享: 'Reference/events/share1vn/referrer.md'
 - Model:
     - 模型文档说明: 'Model/comments.md'
     - 钱包模型: 'Model/wallet/wallet-model.md'
