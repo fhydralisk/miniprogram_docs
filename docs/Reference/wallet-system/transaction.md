@@ -3,7 +3,7 @@
 ## 获取宝宝金收支明细
 
 ### URL
-/wallet/transaction/history/
+/wallet/transaction/list/history/
 
 ### HTTP请求方式
 __GET__
@@ -84,7 +84,7 @@ __响应__
 ## 获取宝宝金交易状态
 
 ### URL
-/wallet/transaction/
+/wallet/transaction/list/
 
 ### HTTP请求方式
 __GET__
