@@ -1,5 +1,7 @@
 ## 获取货物种类以及价格区间
 
+**Deprecated**
+
 ### URL
 /order/obtain/c_type/
 
