@@ -64,6 +64,7 @@ pages:
     - 模型文档说明: 'Model/comments.md'
     - 钱包模型: 'Model/wallet/wallet-model.md'
     - 订单模型: 'Model/order/order-model.md'
+    - 回收站模型: 'Model/business/recycle_bin-model.md'
     - 用户模型:
         - 用户收货地址模型: 'Model/user/delivery_model.md'
 - View:
