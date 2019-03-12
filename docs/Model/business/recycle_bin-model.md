@@ -1,6 +1,6 @@
 #  回收站
 
-## RecycleBin 余额明细
+## RecycleBin 回收站
 
 ### 模型定义
 
