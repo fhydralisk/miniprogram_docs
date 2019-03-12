@@ -10,13 +10,13 @@
 
 ## OrderBookkeepingAggregateView
 
-| 字段名称 | 类型               | 含义     |
-| -------- | ------------------ | -------- |
-| quantity | Decimal            | 数量     |
-| price    | Decimal            | 金额     |
-| top_type | ProductTopTypeView | 顶级品类 |
-| sub_type | ProductSubTypeView | 二级品类 |
-| unit     | PK of ProductUnit  | 单位id   |
+| 字段名称 | 类型                                                         | 含义     |
+| -------- | ------------------------------------------------------------ | -------- |
+| quantity | Decimal                                                      | 数量     |
+| price    | Decimal                                                      | 金额     |
+| top_type | [ProductTopTypeView](/View/category/category/#producttoptypeview) | 顶级品类 |
+| sub_type | [ProductSubTypeView](/View/category/category/#productsubtypeview) | 二级品类 |
+| unit     | PK of ProductUnit                                            | 单位id   |
 
 *注释*
 

@@ -43,9 +43,14 @@ pages:
         - 评价订单: 'Reference/order-system/rate.md'
 
     - 商户系统:
+        - version 2:
+            - 装车单相关接口: 'Reference/business-system/v2/loading.md'
+            - 回收站相关接口: 'Reference/business-system/v2/recycle_bin.md'
         - 获取附近回收站: 'Reference/business-system/recycle_bin.md'
 
-    # - 品类系统:
+    - 品类系统:
+        - 品类-种类: 'Reference/category/category.md'
+        - 单位: 'Reference/category/unit.md'
     # - 质检系统:
     # - 站长系统:
     - 配置系统:
@@ -62,6 +67,9 @@ pages:
     - 用户模型:
         - 用户收货地址模型: 'Model/user/delivery_model.md'
 - View:
+    - 品类系统视图:
+        - 品类-种类视图: 'View/category/category.md'
+        - 单位视图: 'View/category/unit.md'
     - 订单系统视图:
         - 订单视图: 'View/order/order.md'
         - 聚合视图: 'View/order/aggregate.md'
