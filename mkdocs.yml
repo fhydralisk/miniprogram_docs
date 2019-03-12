@@ -49,8 +49,9 @@ pages:
         - 获取附近回收站: 'Reference/business-system/recycle_bin.md'
 
     - 品类系统:
-        - 品类-种类: 'Reference/category/category.md'
-        - 单位: 'Reference/category/unit.md'
+        - version 2:
+            - 品类-种类: 'Reference/category/category.md'
+            - 单位: 'Reference/category/unit.md'
     # - 质检系统:
     # - 站长系统:
     - 配置系统:
