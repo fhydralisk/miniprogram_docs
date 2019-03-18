@@ -9,7 +9,37 @@
 
 --------
 
-## 接口规范
+## 接口规范(V2.0)
+
+### JSON请求规范
+
+- 通过API请求的数据位于data键下
+- 前端上下文信息位于context键下，该信息将由后端服务器不做任何变更的返回。
+- 用户会话user_sid位于字典根节点内。
+- 版本信息位于version键下。*注：在API文档中，version键将被省略。*
+
+**请求例**
+
+```json
+{
+    "user_sid": "aassddffeeggaadd",
+    "data": {
+        "some_request": "some requesta data"
+    },
+    "context": {
+        "save_me": "some data"
+    },
+    "version": "0.1"
+}
+```
+
+### 其他规范
+
+其他规范同V0.1版本
+
+------
+
+## 接口规范(V0.1)
 
 ### JSON请求规范
 
@@ -74,8 +104,8 @@ GET /somepath/somesystem/someapi/?user_sid=aassddffeeggaadd&context=%22save_me%2
 
 ## 版本号
 
-0.1.0
+2.0.0
 
 ## 上次更新时间
 
-2018-11-26
+2019-3-18

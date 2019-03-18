@@ -75,3 +75,8 @@ pages:
     - 订单系统视图:
         - 订单视图: 'View/order/order.md'
         - 聚合视图: 'View/order/aggregate.md'
+    - 商户系统视图:
+        - 装车单视图: 'View/business/loading_credential.md'
+    - 质检系统视图:
+        - 质检单视图: 'View/qc/qc_credential.md'
+        - 质检聚合视图: 'View/qc/aggregate.md'

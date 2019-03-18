@@ -38,3 +38,21 @@ price, price_max, price_min均为转换成公斤后的价格
 ### 注释
 
 price只在某些接口存在
+
+--------
+
+## QCProductSubTypeView
+
+### 视图表
+
+| 字段名称      | 类型              | 含义                   |
+| ------------- | ----------------- | ---------------------- |
+| id            | Long              |                        |
+| name          | String            | 名称                   |
+| unit          | FK ProductUnit    | 外键 ProductUnit id    |
+| in_use        | Boolean           | 是否使用               |
+| price_default | Decimal           | 缺省价格               |
+|       toptype       | [ProductTopTypeView](#producttoptypeview) | 顶级品类 |
+
+
+
