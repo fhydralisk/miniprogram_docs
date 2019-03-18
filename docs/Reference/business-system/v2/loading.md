@@ -276,6 +276,16 @@ GET /business/b/loading/?user_sid=562a73ae-45a0-11e9-86aa-00163e00043c&id=3
                     "quantity": "15.000000",
                     "price": "21.750"
                 }
+            ],
+            'history': [
+                 {
+                     "history_date": 1552915805,
+                     "lc_state": 8
+                 },
+                 {
+                      "history_date": 1552915793,
+                      "lc_state": 0
+                  }
             ]
         }
     },
