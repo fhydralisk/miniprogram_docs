@@ -6,14 +6,15 @@
 
 ### 视图表
 
-| 字段         | 类型                                                         | 含义 |
-| ------------ | ------------------------------------------------------------ | ---- |
-| id           | Long                                                         |      |
-| truck        | String                                                       |      |
-| lc_state     | [lc_state_choice](#lc_state)                                 |      |
-| rb_type      | [r_b_type_choice](/Model/business/recycle_bin-model/#r_b_type) |      |
-| created_date | Timestamp                                                    |      |
-| cred_detail  | List of [LoadingCredentialDetailView](#loadingcredentialdetailview) |      |
+| 字段         | 类型                                                         | 含义           |
+| ------------ | ------------------------------------------------------------ | -------------- |
+| id           | Long                                                         | 主键           |
+| truck        | String                                                       | 车牌号         |
+| lc_state     | [lc_state_choice](#lc_state)                                 | 装车单当前状态 |
+| rb_type      | [r_b_type_choice](/Model/business/recycle_bin-model/#r_b_type) | 回收站类型     |
+| created_date | Timestamp                                                    | 创建日期       |
+| cred_detail  | List of [LoadingCredentialDetailView](#loadingcredentialdetailview) | 装车单详情     |
+| history      | List of {history_date: Timestamp, lc_state: [lc_state_choice](#lc_state)} | 装车单状态历史 |
 
 ### 注释
 
