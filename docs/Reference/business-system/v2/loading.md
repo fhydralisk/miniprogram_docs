@@ -130,15 +130,15 @@ GET /business/b/loading/list/
 
 ### 请求参数
 
-| 参数名称     | 类型                | 含义         |
-| ------------ | ------------------- | ------------ |
-| user_sid     | String              |              |
-| agg_op       | String(Optional)    | 聚合方式     |
-| lc_state_set | String(Optional)    | 装车单状态集 |
-| start_time   | Timestamp(Optional) | 起始创建时间 |
-| end_time     | Timestamp(Optional) | 结束创建时间 |
-| truck        | String(Optional)    | 车牌号       |
-| load_id      | Long(Optional)      | 装车单编号   |
+| 参数名称     | 类型                                                         | 含义         |
+| ------------ | ------------------------------------------------------------ | ------------ |
+| user_sid     | String                                                       |              |
+| agg_op       | [AggOperationChoice](/View/order/aggregate/#aggoperationchoice)(Optional) | 聚合方式     |
+| lc_state_set | String(Optional)                                             | 装车单状态集 |
+| start_time   | Timestamp(Optional)                                          | 起始创建时间 |
+| end_time     | Timestamp(Optional)                                          | 结束创建时间 |
+| truck        | String(Optional)                                             | 车牌号       |
+| load_id      | Long(Optional)                                               | 装车单编号   |
 
 ### 应答
 

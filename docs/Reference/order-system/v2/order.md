@@ -16,13 +16,13 @@ GET /order/c/order/
 
 ### 请求参数
 
-| 参数名称 | 参数类型                                 | 参数说明 |
-| -------- | ---------------------------------------- | -------- |
-| oid      | FK OrderInfo                             | 订单id   |
-| agg_op   | String(aggregate_operation_choice)(可选) | 聚合方式 |
-| lat      | Decimal(可选)                            | 纬度     |
-| lng      | Decimal(可选)                            | 经度     |
-| user_sid |                                          |          |
+| 参数名称 | 参数类型                                                     | 参数说明 |
+| -------- | ------------------------------------------------------------ | -------- |
+| oid      | FK OrderInfo                                                 | 订单id   |
+| agg_op   | [AggOperationChoice](/View/order/aggregate/#aggoperationchoice)(可选) | 聚合方式 |
+| lat      | Decimal(可选)                                                | 纬度     |
+| lng      | Decimal(可选)                                                | 经度     |
+| user_sid |                                                              |          |
 
 ### 应答
 
