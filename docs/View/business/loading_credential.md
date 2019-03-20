@@ -60,3 +60,6 @@
 | aggregate          | [OrderBookkeepingAggregateListView](/View/order/order/#orderbookkeepingaggregatelistview) | 装车单聚合 |
 | qc_price           | Decimal                                                      | 质检金额   |
 
+### 注释
+
+qc_price为null代表该单未质检
