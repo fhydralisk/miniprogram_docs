@@ -58,4 +58,5 @@
 | ------------------ | ------------------------------------------------------------ | ---------- |
 | loading_credential | [LoadingCredentialView](#loadingcredentialview)              | 装车单     |
 | aggregate          | [OrderBookkeepingAggregateListView](/View/order/order/#orderbookkeepingaggregatelistview) | 装车单聚合 |
+| qc_price           | Decimal                                                      | 质检金额   |
 

@@ -145,8 +145,11 @@ GET /business/b/loading/list/
 | 字段名称            | 类型                                                         | 含义             |
 | ------------------- | ------------------------------------------------------------ | ---------------- |
 | loading_credentials | List of [LoadingCredentialWithAggregateView](/View/business/loading_credential/#loadingcredentialwithaggregateview) | 装车单及汇总列表 |
+| total_qc_price      | Decimal                                                      | 总质检金额       |
 
 ### 注释
+
+总质检金额仅包含已通过质检的装车单的质检金额。
 
 所有可选字段不添加表示不过滤。**不能**以truck=&这种方式在URL中留空表示不添加过滤条件。
 
@@ -181,6 +184,7 @@ GET /business/b/loading/list/?user_sid=562a73ae-45a0-11e9-86aa-00163e00043c&lc_s
                     "rb_type": 1,
                     "created_date": "1544888849"
                 },
+                "qc_price": "50.000",
                 "aggregate": {
                     "aggregates": [
                         {
@@ -193,7 +197,8 @@ GET /business/b/loading/list/?user_sid=562a73ae-45a0-11e9-86aa-00163e00043c&lc_s
                 }
             }
         ],
-        "result": 200
+        "result": 200,
+        "total_qc_price": "50.000"
     },
     "context": null
 }
@@ -218,9 +223,10 @@ GET /business/b/loading/
 
 ### 应答
 
-| 字段名称           | 类型                                                         | 含义   |
-| ------------------ | ------------------------------------------------------------ | ------ |
-| loading_credential | [LoadingCredentialView](/View/business/loading_credential/#loadingcredentialview) | 装车单 |
+| 字段名称           | 类型                                                         | 含义     |
+| ------------------ | ------------------------------------------------------------ | -------- |
+| loading_credential | [LoadingCredentialView](/View/business/loading_credential/#loadingcredentialview) | 装车单   |
+| qc_price           | Decimal                                                      | 质检金额 |
 
 ### 请求例
 
@@ -234,7 +240,6 @@ GET /business/b/loading/?user_sid=562a73ae-45a0-11e9-86aa-00163e00043c&id=3
 {
     "version": "2.0",
     "response": {
-        "result": 200,
         "loading_credential": {
             "id": 3,
             "truck": "辽B88888",
@@ -277,17 +282,19 @@ GET /business/b/loading/?user_sid=562a73ae-45a0-11e9-86aa-00163e00043c&id=3
                     "price": "21.750"
                 }
             ],
-            'history': [
-                 {
-                     "history_date": 1552915805,
-                     "lc_state": 8
-                 },
-                 {
-                      "history_date": 1552915793,
-                      "lc_state": 0
-                  }
+            "history": [
+                {
+                    "history_date": 1552915805,
+                    "lc_state": 8
+                },
+                {
+                    "history_date": 1552915793,
+                    "lc_state": 0
+                }
             ]
-        }
+        },
+        "result": 200,
+        "qc_price": "50.000"
     },
     "context": null
 }
