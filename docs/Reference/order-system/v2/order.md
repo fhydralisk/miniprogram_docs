@@ -141,17 +141,117 @@ GET /order/b/order/?oid=636&user_sid=tttaaa&agg_op=toptype_b_unit
 | /order/detail/final_t_p_detail/       |      |
 | /order/obtain/order_details_customer/ |      |
 
---------
+------
+
+## 获取订单列表
+
+### URL
+
+*B端*
+
+GET /order/b/order/list/
+
+### HTTP 请求参数
+
+| 参数名称   | 类型                              | 含义       |
+| ---------- | --------------------------------- | ---------- |
+| user_sid   |                                   |            |
+| to_grab    | Boolean                           | 获取待抢订单列表 |
+| load_id    | PK of LoadingCredential           | 装车单ID |
+| start_time | Timestamp                         | 订单创建时间范围-起始 |
+| end_time   | Timestamp                         | 订单创建时间范围-终止 |
+| o_states   | List of [o_state_choice](/View/order/order/#order_state_choice), splitted by ',' | 订单状态集 |
+| rb_type    | Integer                           | 回收站类型 |
+| lat | Decimal | 当前位置经度 |
+| lng | Decimal | 当前位置纬度 |
+| page | Integer | 页码 |
+| page_per_count | Integer | 每页个数 |
+
+### HTTP应答参数
+
+| 参数名称 | 类型                                                         | 含义     |
+| -------- | ------------------------------------------------------------ | -------- |
+| orders   | List of {order: [OrderView](/View/order/order/), distance: Float} | 订单列表 |
+
+### 注释
+
+to_grab=true时，返回B端可抢订单列表。
+
+### 请求例
+
+```http
+GET /order/b/order/list/?user_sid=d1eb31ca-4aed-11e9-a860-acde48001122&to_grab=true&lat=39.9621301&lng=116.3574610
+```
+
+### 应答例
+
+```json
+{
+    "version": "2.0",
+    "response": {
+        "n_pages": 1,
+        "result": 200,
+        "orders": [
+            {
+                "order": {
+                    "id": 662,
+                    "create_time": 1553229343,
+                    "grab_time": null,
+                    "complete_time": null,
+                    "o_state": 0,
+                    "amount": "0.000",
+                    "c_delivery_info": {
+                        "id": 85,
+                        "address": "北京市海淀区西土城路10号",
+                        "contact": null,
+                        "house_number": null,
+                        "contact_pn": "13261809966",
+                        "lat": "39.9621300",
+                        "lng": "116.3574400",
+                        "can_resolve_gps": true
+                    },
+                    "recycling_staff": null,
+                    "time_remain": 0,
+                    "time_remain_b": 0,
+                    "target_time": 1553232943,
+                    "order_picking_time": {
+                        "start_time": 1553328000,
+                        "end_time": 1553335199
+                    },
+                    "can_cancel_b": false,
+                    "budget": 26.086956,
+                    "delete_code": 2,
+                    "bookkeeping": [],
+                    "customer_products": [
+                        {
+                            "quantity": "30.000000",
+                            "p_type": {
+                                "id": 5,
+                                "t_top_name": "废铁",
+                                "in_use": true,
+                                "description": ""
+                            }
+                        }
+                    ]
+                },
+                "distance": 1,
+                "aggregates": null
+            }
+        ]
+    },
+    "context": null
+}
+```
+
+-------
 
 ## 一键下单
 
 ### URL
 
-/order/c/order/
+*C端*
 
-### HTTP请求方式
-
-__POST JSON__
+POST /order/c/order/
 
 ### HTTP请求参数
 
@@ -185,13 +285,16 @@ result含义：
 
 __请求__
 
+
+
+__响应__
 ```json
 {
     "user_sid": "3fd60833-f543-11e8-9057-6c96cfdf6ce7",
-	"data":{
+    "data":{
         "order_picking_time": 0,
-		"customer_appraisal":[
-			{
+        "customer_appraisal":[
+            {
                 "p_type": 1,
                 "quantity": 30,
                 "quantity_max": 60,
@@ -203,8 +306,99 @@ __请求__
             }
         ],
         "deli_id": 9
-	}
+    }
 }
 ```
 
-__响应__
+-------
+
+## 抢单
+
+### URL
+
+*B端*
+
+POST /order/b/order/fetch/
+
+### HTTP请求参数
+
+| 参数名称 | 类型            | 含义   |
+| -------- | --------------- | ------ |
+| oid      | PK of OrderInfo | 订单ID |
+
+### HTTP应答
+
+-
+
+### 请求例
+
+```json
+{
+  "data": {
+    "oid": 633
+  }
+}
+```
+
+### 应答例
+
+```json
+{
+  "version": "2.0",
+  "response": {
+    "result": 200
+  }
+}
+```
+
+### 替代接口
+
+|      |      |
+| ---- | ---- |
+|      |      |
+
+
+
+-------
+
+## 新建扫码、手动记账订单
+
+### URL
+
+*B端*
+
+POST /order/b/order/
+
+### 请求参数
+
+| 参数名称         | 类型                                                         | 含义         |
+| ---------------- | ------------------------------------------------------------ | ------------ |
+| bookkeeping_type | [order_bookkeeping_type](/View/order/order/#order_bookkeeping_type) | 订单记账类型 |
+
+### 应答
+
+| 字段名称 | 类型            | 含义   |
+| -------- | --------------- | ------ |
+| id       | PK of OrderInfo | 订单ID |
+
+### 请求例
+
+```json
+{
+  "data": {
+    "bookkeeping_type": 2
+  }
+}
+```
+
+### 应答例
+
+```json
+{
+  "response": {
+    "id": 16
+  }
+}
+```
+
+-----

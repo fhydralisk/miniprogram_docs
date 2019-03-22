@@ -189,3 +189,74 @@ GET /order/b/order/bookkeeping/aggregate/group/?user_sid=tttaaa&agg_op=toptype_b
 
 ---------
 
+## 记账
+
+### URL
+
+POST /order/b/order/bookkeeping/
+
+### 请求参数
+
+| 参数名称         | 类型                                                         | 含义       |
+| ---------------- | ------------------------------------------------------------ | ---------- |
+| oid              | PK of OrderInfo                                              | 订单ID     |
+| bookkeeping_type | [order_bookkeeping_type](/View/order/order/#order_bookkeeping_type) | 记账类型   |
+| bookkeeping      | List of [BookkeepingView](/View/order/bookkeeping/#bookkeepingview) | 记账单     |
+| pn               | String(Optional)                                             | 手机号     |
+| qr_info          | String(Optional)                                             | 二维码信息 |
+
+### 应答
+
+-
+
+### 注释
+
+pn字段仅在bookkeeping_type为手动记账时需要；
+
+qr_info字段仅在扫码记账时需要。
+
+### 请求例
+
+```json
+{
+	"user_sid": "tttaaa",
+	"data": {
+		"oid": 63,
+		"bookkeeping_type": 2,
+		"pn": "18888888888",
+		"bookkeeping": [
+			{
+				"p_type": 7,
+				"quantity": "10.0"
+			},
+			{
+				"p_type": 7,
+				"quantity": "12.0"
+			},
+			{
+				"p_type": 9,
+				"quantity": "10.0"
+			}
+		]
+	}
+}
+```
+
+### 应答例
+
+```json
+{
+  "response": {
+    "result": 200
+  }
+}
+```
+
+### 替代接口
+
+| URL                                    | 端   |
+| -------------------------------------- | ---- |
+| /order/operate/order_bookkeeping_b/    | B    |
+| /order/operate/order_bookkeeping_pn/   | B    |
+| /order/operate/order_bookkeeping_scan/ | B    |
+
