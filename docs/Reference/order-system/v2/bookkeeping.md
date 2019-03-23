@@ -182,10 +182,10 @@ GET /order/b/order/bookkeeping/aggregate/group/?user_sid=tttaaa&agg_op=toptype_b
 
 本接口替换如下原有接口
 
-| URL                             | 备注 |
+| URL                             | 端   |
 | ------------------------------- | ---- |
-| /order/c/detail/summary/        |      |
-| /order/obtain/order_list_count/ |      |
+| /order/c/detail/summary/        | B    |
+| /order/obtain/order_list_count/ | B/C  |
 
 ---------
 

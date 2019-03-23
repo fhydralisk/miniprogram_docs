@@ -243,6 +243,19 @@ GET /order/b/order/list/?user_sid=d1eb31ca-4aed-11e9-a860-acde48001122&to_grab=t
 }
 ```
 
+### 替换接口
+
+| URL                                 | 端   |
+| ----------------------------------- | ---- |
+| /order/obtain/order_list/           |      |
+| /order/obtain/order_list_b/         |      |
+| /order/obtain/order_list_by_date/   |      |
+| /order/obtain/order_list_by_type/   |      |
+| /order/obtain/order_list_by_state/  |      |
+| /order/obtain/order_list_by_filter/ |      |
+
+
+
 -------
 
 ## 一键下单
@@ -310,6 +323,12 @@ __响应__
 }
 ```
 
+### 接口替换
+
+| URL                             | 端   |
+| ------------------------------- | ---- |
+| /order/operate/one_click_order/ | C    |
+
 -------
 
 ## 抢单
@@ -353,9 +372,9 @@ POST /order/b/order/fetch/
 
 ### 替代接口
 
-|      |      |
-| ---- | ---- |
-|      |      |
+| URL                              | 端   |
+| -------------------------------- | ---- |
+| /order/operate/order_complete_b/ | B    |
 
 
 
