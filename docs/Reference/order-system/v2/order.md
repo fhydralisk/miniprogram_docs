@@ -421,3 +421,39 @@ POST /order/b/order/
 ```
 
 -----
+
+## 删除订单
+
+### URL
+
+*B端*
+
+DELETE /order/b/order/
+
+### 请求参数
+
+| 参数名称 | 类型            | 含义   |
+| -------- | --------------- | ------ |
+| oid      | PK of OrderInfo | 订单ID |
+| user_sid |                 |        |
+
+### 应答
+
+-
+
+### 请求例
+
+```http
+DELETE /order/b/order/?user_sid=tttaaa&oid=63
+```
+
+### 应答例
+
+-
+
+### 接口替换
+
+| URL                 | 端   |
+| ------------------- | ---- |
+| /order/b/del_order/ | B    |
+
