@@ -34,6 +34,7 @@ pages:
         - version 2:
             - 订单相关接口: 'Reference/order-system/v2/order.md'
             - 记账相关接口: 'Reference/order-system/v2/bookkeeping.md'
+            - 订单-站长接口: 'Reference/order-system/v2/referrer.md'
         - 获取我的投递: 'Reference/order-system/obtain.md'
         - 用户收货地址: 'Reference/order-system/delivery_info.md'
         - 种类价格列表: 'Reference/order-system/category.md'
