@@ -4,7 +4,7 @@
 
 ### URL
 
-GET /order/referrer/order_list/
+GET /order/refer/order_list/
 
 ### 请求参数
 
@@ -40,7 +40,7 @@ GET /order/referrer/order_list/
 获取有站长的订单列表，每页3个，返回第一页。
 
 ```http
-GET /order/referrer/order_list/?page=0&page_per_count=3&no_refer=false&user_sid=000-111-sss-3333
+GET /order/refer/order_list/?page=0&page_per_count=3&no_refer=false&user_sid=000-111-sss-3333
 ```
 
 ### 应答例
