@@ -153,7 +153,7 @@ PUT /adminsys/user/b/
 | 参数名称 | 类型                                                         | 含义       |
 | -------- | ------------------------------------------------------------ | ---------- |
 | id       | Int (FK of RecyclingStaff)                                   | 回收员ID   |
-| update   | Partial [RecyclingStaffView](/View/business/recycle_bin/#recyclingstaffview) | 回收员视图 |
+| update   | Partial Flatten [RecyclingStaffView](/View/business/recycle_bin/#recyclingstaffview) | 回收员视图 |
 
 ### 应答
 
@@ -201,7 +201,7 @@ POST /adminsys/user/b/
 
 | 参数名称        | 类型                                                         | 含义       |
 | --------------- | ------------------------------------------------------------ | ---------- |
-| recycling_staff | Partial [RecyclingStaffView](/View/business/recycle_bin/#recyclingstaffview) | 回收员视图 |
+| recycling_staff | Flatten [RecyclingStaffView](/View/business/recycle_bin/#recyclingstaffview) | 回收员视图 |
 
 ### 应答
 
