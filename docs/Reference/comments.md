@@ -2,10 +2,11 @@
 
 ## 术语表
 
-| 符号   | 含义 | 备注                                     |
-| ------ | ---- | ---------------------------------------- |
-| Object | 对象 | 作为响应或用作请求时以 Json 字典进行描述 |
-| View   | 视图 |                                          |
+| 符号    | 含义   | 备注                                                 |
+| ------- | ------ | ---------------------------------------------------- |
+| Object  | 对象   | 作为响应或用作请求时以 Json 字典进行描述             |
+| View    | 视图   |                                                      |
+| Flatten | 扁平化 | 对多层级的字典格式的扁平处理，使得其更易被前端使用。 |
 
 --------
 
@@ -36,6 +37,139 @@
 ### 其他规范
 
 其他规范同V0.1版本
+
+-------
+
+## 扁平化
+
+对关系型模型或JSON字典进行扁平化处理
+
+### 处理方式
+
+对所有的父节点非根节点的叶子节点(key_leaf: value, value为非集合对象)，寻找其祖先，并记录路径下的键，直到如下任意情况满足：
+
+1. 祖先属于是根节点
+2. 祖先为列表类集合节点中的元素
+
+将路径(key_ancient, key_child1, key_child2, …, key_childn, key_leaf)下的所有键通过连接符(默认为'__')连接，构成新的键*key_flatted*=key_ancient\_\_key_child1\_\_key_child2\_\_…\_\_key_childn\_\_key_leaf
+
+将新的key_flatted: value加入到祖先节点的父节点中
+
+重复上述操作，直到所有的上述类型叶子节点都被处理，然后移除所有原有的节点。
+
+### 示例1
+
+示例1对关系模型视图[RecyclingStaffView](/View/business/recycle_bin/#recyclingstaffview)的序列化结果进行比对展示。
+
+**关系模型非扁平序列化结果示例**
+
+```json
+{
+    "id":4,
+    "rs_name":"王五",
+    "is_administrator":true,
+    "modified_time":"1546794895",
+    "user":{
+        "id":15,
+        "internal_name":"18888888890",
+        "is_active":true,
+        "role":1,
+        "is_staff":false,
+        "registered_date":"1548861789",
+        "pn":"18888888890",
+        "user_validate":null
+    },
+    "recycle_bin":{
+        "id":11,
+        "GPS_L":"121.5506260",
+        "GPS_A":"39.0365320",
+        "rb_name":"测试地点3",
+        "r_b_type":0,
+        "loc_desc":"辽宁省大连市测试区测试街道90号",
+        "position_desc":null,
+        "pn":"18888888890",
+        "in_use":false
+    }
+}
+```
+
+**关系模型的扁平化示例**
+
+```json
+{
+    "is_administrator":true,
+    "id":4,
+    "modified_time":"1546794895",
+    "rs_name":"王五",
+    "user__registered_date":"1548861789",
+    "user__id":15,
+    "user__pn":"18888888890",
+    "user__is_staff":false,	
+    "user__role":1,
+    "user__user_validate":null,
+    "user__is_active":true,
+    "user__internal_name":"18888888890",
+    "recycle_bin__GPS_L":"121.5506260",
+    "recycle_bin__in_use":false,
+    "recycle_bin__loc_desc":"辽宁省大连市测试区测试街道90号",
+    "recycle_bin__r_b_type":0,
+    "recycle_bin__position_desc":null,
+    "recycle_bin__pn":"18888888890",
+    "recycle_bin__GPS_A":"39.0365320",
+    "recycle_bin__id":11,
+    "recycle_bin__rb_name":"测试地点3"
+}
+```
+
+### 示例2
+
+**JSON非扁平结果示例**
+
+```json
+{
+  "dict_contains_list": {
+    "value": "test",
+    "list": [
+      {
+        "key": "test_key1",
+        "values": [1, 2, 3]
+      },
+      {
+        "key": "test_key2",
+        "values": [1, 2, 3]
+      },
+      {
+        "key": "test_key3",
+        "values": [1, 2, 3]
+      }
+    ]
+  }
+}
+```
+
+**扁平化结果**
+
+```json
+{
+  "dict_contains_list__value": "test",
+  "dict_contains_list__list": [
+    {
+      "key": "test_key1",
+      "values": [1, 2, 3]
+    },
+    {
+      "key": "test_key2",
+      "values": [1, 2, 3]
+    },
+    {
+      "key": "test_key3",
+      "values": [1, 2, 3]
+    }
+  ]
+}
+```
+
+
 
 ------
 
@@ -108,4 +242,4 @@ GET /somepath/somesystem/someapi/?user_sid=aassddffeeggaadd&context=%22save_me%2
 
 ## 上次更新时间
 
-2019-3-18
+2019-4-9

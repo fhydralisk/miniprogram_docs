@@ -59,7 +59,17 @@ pages:
         - 配置系统简介: 'Reference/config-system/introduction.md'
         - 一键下单有关配置: 'Reference/config-system/client-order.md'
     #- 界面系统:
-    #- 后台系统:
+    - 后台系统:
+        - 登录登出: 'Reference/admin/login.md'
+        - 用户管理:
+            - B端用户管理: 'Reference/admin/user/user_b.md'
+            - C端用户管理: 'Reference/admin/user/user_c.md'
+            - QC端用户管理: 'Reference/admin/user/user_qc.md'
+            - 站长管理: 'Reference/admin/user/user_r.md'
+        - B端管理:
+            - 回收站管理: 'Reference/admin/business/recycle_bin.md'
+        - QC端管理:
+            - 质检场地管理: 'Reference/admin/qc/qc_place.md'
     - 活动:
         - 一对多分享: 'Reference/events/share1vn/referrer.md'
 - Model:
@@ -70,6 +80,8 @@ pages:
     - 用户模型:
         - 用户收货地址模型: 'Model/user/delivery_model.md'
 - View:
+    - 用户视图:
+        - 用户相关视图: 'View/user/user.md'
     - 品类系统视图:
         - 品类-种类视图: 'View/category/category.md'
         - 单位视图: 'View/category/unit.md'
@@ -78,6 +90,7 @@ pages:
         - 记账视图: 'View/order/bookkeeping.md'
         - 聚合视图: 'View/order/aggregate.md'
     - 商户系统视图:
+        - 回收站视图: 'View/business/recycle_bin.md'
         - 装车单视图: 'View/business/loading_credential.md'
     - 质检系统视图:
         - 质检单视图: 'View/qc/qc_credential.md'
