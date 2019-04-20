@@ -24,7 +24,7 @@ GET /adminsys/user/r/list/
 | count_active   | Int  | 可用用户数量         |
 | count_inactive | Int  | 不可用用户数量       |
 | count_all      | Int  | 全部用户数量         |
-| referrers      |      | 【扁平化】推荐人列表 |
+| referrers      | List | 【扁平化】推荐人列表 |
 
 ### 请求例
 
@@ -120,7 +120,7 @@ GET /adminsys/user/r/qr/?user_sid=user_id_admin&id=3
 
 ### 应答例
 
-- ![avatar](https://backend.sandbox.bbrecycle.cn:8443/adminsys/user/r/qr/?user_sid=pz23kuvify7z0brahp0ywne61iqinyf3&id=3)
+无
 
 # 获取详情
 
@@ -212,12 +212,8 @@ Postman-Token: 7il3l1l3zf-ggas-omah-a08g-xqf70kpo1c
 					"percentage":"0.0000",
 					"expire_date":1551323899,
 					"r_state":"pass",
-					"pass_date":null,
-					"referrer_code":"8e3d249bddcb42ffa6a415f7ba1fe99e",
 					"position":"3",
-					"user_pn1":null,
-					"operator":"1",
-					"aaa":2
+					"operator":"1"
 		}
 	}
 }
@@ -238,5 +234,3 @@ Postman-Token: 7il3l1l3zf-ggas-omah-a08g-xqf70kpo1c
 ### 注释
 
 修改接口的update内所有字段均为可选，更新方式为增量更新。
-
-例如，update下不含referrer_code，则不对推荐码进行更新。
