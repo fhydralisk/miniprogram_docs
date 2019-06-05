@@ -1,5 +1,46 @@
 # 装车单相关接口
 
+## 生成装车单
+
+### URL
+
+B端
+
+```http
+GET /business/b/truck/generate_loading_credential/
+```
+
+### 请求参数
+
+| 参数名称     | 类型   | 含义   |
+| ------------ | ------ | ------ |
+| number_plate | String | 车牌号 |
+
+### 应答
+
+无
+
+### 请求例
+
+```http
+GET /business/b/truck/generate_loading_credential/?user_sid=v7ee55pgzhe7wqwwugdz6plqhpgvymw3&number_plate=苏E732
+```
+
+### 应答例
+
+```json
+{
+    "version": "2.0",
+    "response": {
+        "credential_id": 2000,
+        "result": 200
+    },
+    "context": null
+}
+```
+
+------
+
 ## 获取待装车订单列表
 
 ### URL

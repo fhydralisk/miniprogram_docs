@@ -53,7 +53,8 @@ pages:
         - version 2:
             - 品类-种类: 'Reference/category/category.md'
             - 单位: 'Reference/category/unit.md'
-    # - 质检系统:
+    - 质检系统:
+        - 质检单相关接口: 'Reference/qc-system/qc_credential.md'
     # - 站长系统:
     - 配置系统:
         - 配置系统简介: 'Reference/config-system/introduction.md'
@@ -95,3 +96,5 @@ pages:
     - 质检系统视图:
         - 质检单视图: 'View/qc/qc_credential.md'
         - 质检聚合视图: 'View/qc/aggregate.md'
+        - 质检员视图: 'View/qc/qc_staff.md'
+        - 质检场地视图: 'View/qc/qc_place.md'
